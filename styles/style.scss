@@ -1,0 +1,208 @@
+$lightblue: #0072bc;
+$darkblue: #00437b;
+$white: #ffffff;
+$primaryfonts: "brandon-grotesque",
+Arial,
+sans-serif;
+
+body {
+    font-family: $primaryfonts;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.sub-container {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #a5bfde;
+}
+
+h1 {
+    position: relative;
+    font-size: 2.5rem;
+    color: $darkblue;
+    line-height: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+h3 {
+    font-size: 153.84615%;
+    line-height: 120%;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 107.6923%;
+    color: $darkblue;
+    line-height: 1;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+
+    span.updated {
+        font-size: 90%;
+        color: $lightblue;
+    }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mountain-selector {
+    text-align: center;
+    flex: 1 1 0px;
+    border: 1px solid #a5bfde;
+    color: $darkblue;
+    cursor: pointer;
+
+    &.active {
+        color: $white;
+        background: $darkblue;
+    }
+}
+
+.mountain-area-tabs {
+    color: #0072bc;
+    padding: 12px 0;
+    font-weight: 700;
+    font-style: normal;
+    background: 0;
+    border: 1px solid #a5bfde;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    flex: 1 1 0px;
+    text-align: center;
+    cursor: pointer;
+
+    &.active {
+        background-color: #eff5fa;
+        color: #00437b;
+        -webkit-box-shadow: 0 0 5px 0 #bedbff;
+        -moz-box-shadow: 0 0 5px 0 #bedbff;
+        box-shadow: 0 0 5px 0 #bedbff;
+    }
+
+    &:hover,
+    &:active {
+        background-color: #eff5fa;
+        color: #00437b;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+    }
+}
+
+// Main Gridded Layout
+.current-conditions {
+    font-size: 93%;
+    color: $darkblue;
+    line-height: 1;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+    text-align: center;
+
+    .current-conditions-entry {
+        padding: 20px;
+        flex: 1 1 0px;
+        border: 1px solid #a5bfde;
+
+        &:nth-child(even) {
+            border-right: 1px solid transparent;
+            border-left: 1px solid transparent;
+        }
+
+        i.fal {
+            color: $lightblue;
+            line-height: 80px;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 3rem;
+            clear: both;
+            padding: 0 2rem 0.1rem 2rem;
+        }
+
+        .value {
+            font-size: 3rem;
+            color: $lightblue;
+            line-height: 80px;
+            font-weight: 700;
+            font-style: normal;
+            text-transform: uppercase;
+            margin: 0;
+            clear: both;
+        }
+
+        .sub-label {
+            color: $lightblue;
+        }
+
+        .temp {
+            font-size: 2rem;
+            vertical-align: middle;
+            line-height: 2.5rem;
+            display: inline-block;
+        }
+    }
+}
+
+.weather-source {
+    flex: 1 1 0px;
+    color: #0072bc;
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding: 30px;
+    text-align: center;
+    font-size: 1rem;
+    img {
+        max-width: 180px;
+        padding: 10px 0;
+    }
+    a {
+
+        display: inline-block;
+        margin: 10px 0;
+        font-family: "brandon-grotesque",Arial,sans-serif;
+        font-size: .8rem;
+        color: #00437b;
+        line-height: 100%;
+        font-weight: normal;
+        font-style: normal;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        padding: 15px 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 1px solid #a5bfde;
+        &:hover {
+            color: #00437b;
+            border-color: #0072bc;
+        }
+    
+    }
+}
+
+
+ 

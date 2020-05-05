@@ -1,0 +1,176 @@
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/wxd8kef.css">
+  <script src="https://kit.fontawesome.com/1e4101f17e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles/style.css">
+
+  <!-- Handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+  <!-- online handlebars.js-->
+  <script src="js/HandlebarsHelpers.js"></script>
+  <!-- Moment date formating -->
+  <script src="js/moment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- JS file -->
+  <script src="js/DataFetch.js"></script>
+ 
+
+</head>
+
+<body>
+  <script id="entrytemplate" type="text/x-handlebars-template">
+<div class="container">
+
+  <h1>Lake Tahoe Snow & Weather Report</h1>
+  <div class="sub-container">
+
+  
+
+    <div class="flex-container">
+      
+
+      <div class="mountain-selector active">
+        <h3>Squaw</h3>
+      </div>
+      <div class="mountain-selector">
+        <h3>Alpine</h3>
+      </div>
+
+
+    </div>
+    <br>
+
+    <img src="https://storage.roundshot.com/54537244393080.83872996/2020-05-04/15-10-00/2020-05-04-15-10-00_medium.jpg" width=100% height=300>
+    <br><br> <br>
+
+
+
+    <div class="flex-container">
+
+      <div class="mountain-area-tabs" id="mountain-area-tabs">Crest</div>
+      <div class="mountain-area-tabs active">Upper Mountain</div>
+      <div class="mountain-area-tabs">Lower Mountain</div>
+    </div>
+
+    <h5>Current Conditions @ 8000' (Bottom of Belmont Chairlift)<br>
+      <span class="updated">Updated: Mon, May 4 @ 3:23pm</span></h5>
+
+    <div class="flex-container current-conditions">
+
+      <div class="current-conditions-entry"><i class="fal fa-sun"></i><br>{{CurrentConditions.MidMountain.Skies}}</div>
+      <div class="current-conditions-entry"><span class="value">{{round CurrentConditions.MidMountain.TemperatureF}}°</span><br> Temperature</div>
+      <div class="current-conditions-entry"><span class="value">{{round CurrentConditions.MidMountain.WindStrengthMph}}</span><span class="sub-label">mph</span><br>Wind</div>
+      <div class="current-conditions-entry"><span class="value">SSW</span><br>Wind Direction</div>
+      <div class="current-conditions-entry"><span class="value">10</span><span class="sub-label">mph</span><br>Maximum Wind Gust</div>
+
+    </div>
+
+    <br /><br />
+
+    <h5>6AM Snowfall Report<br>
+      <!-- change to SnowReport.LastUpdate once data is flowing-->
+      <span class="updated">Updated: {{daydateformat LastUpdate}}</span></h5>
+
+    <div class="flex-container current-conditions">
+
+      <div class="current-conditions-entry"><span class="value">{{round SnowReport.MidMountainArea.SinceLiftsClosedIn}}</span><span class="sub-label">in</span><br>Overnight</div>
+      <div class="current-conditions-entry"><span class="value">{{round SnowReport.MidMountainArea.Last24HoursIn}}</span><span class="sub-label">in</span><br>24 Hrs</div>
+      <div class="current-conditions-entry"><span class="value">{{round SnowReport.MidMountainArea.Last7DaysIn}}</span><span class="sub-label">in</span><br>7 Day</div>
+      <div class="current-conditions-entry"><span class="value">{{round SnowReport.MidMountainArea.BaseIn}}</span><span class="sub-label">in</span><br>Base</div>
+      <div class="current-conditions-entry"><span class="value">{{round SnowReport.SeasonTotalIn}}</span><span class="sub-label">in</span><br>Season Total</div>
+
+    </div>
+
+    <h5>Weather Forecast</h5>
+
+    <div class="flex-container current-conditions">
+
+      <div class="current-conditions-entry">
+        Today</br>
+        <i class="fal fa-sun"></i><br>
+        {{CurrentConditions.Summit.Skies}}
+        <br><br>
+        <span class="sub-label">Low </span><span class="temp">{{round Forecast.TempLowF}}°</span><br>
+        <span class="sub-label">High </span><span class="temp">{{round Forecast.TempHighF}}°</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        Tomorrow</br>
+        <i class="fal fa-clouds-sun"></i><br>
+        {{Forecast.OneDay.skies}}
+        <br><br>
+        <span class="sub-label">Low </span><span class="temp">{{round Forecast.OneDay.temp_low_f}}°</span><br>
+        <span class="sub-label">High </span><span class="temp">{{round Forecast.OneDay.temp_high_f}}</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        2 Days Out</br>
+        <i class="fal fa-cloud-snow"></i><br>
+        {{Forecast.TwoDay.skies}}
+        <br><br>
+        <span class="sub-label">Low </span><span class="temp">{{round Forecast.TwoDay.temp_low_f}}°</span><br>
+        <span class="sub-label">High </span><span class="temp">{{round Forecast.TwoDay.temp_high_f}}</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        3 days Out</br>
+        <i class="fal fa-wind"></i><br>
+        {{Forecast.ThreeDay.skies}}
+        <br><br>
+        <span class="sub-label">Low </span><span class="temp">{{round Forecast.ThreeDay.temp_low_f}}°</span><br>
+        <span class="sub-label">High </span><span class="temp">{{round Forecast.ThreeDay.temp_high_f}}</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        4 Days Out</br>
+        <i class="fal fa-sun-cloud"></i><br>
+        {{Forecast.FourDay.skies}}
+        <br><br>
+        <span class="sub-label">Low </span><span class="temp">{{round Forecast.FourDay.temp_low_f}}°</span><br>
+        <span class="sub-label">High </span><span class="temp">{{round Forecast.FourDay.temp_high_f}}</span><br>
+      </div>
+    </div>
+
+    <h5>Snow Forecast</h5>
+
+    <div class="flex-container current-conditions">
+
+      <div class="current-conditions-entry">
+        Today</br><br>
+
+        <span class="sub-label">Day </span><span class="temp">2"</span><br>
+        <span class="sub-label">Night </span><span class="temp">5"</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        Tomorrow<br><br>
+
+        <span class="sub-label">Day </span><span class="temp">2"</span><br>
+        <span class="sub-label">Night </span><span class="temp">5"</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        2 Days Out<br><br>
+
+        <span class="sub-label">Day </span><span class="temp">2"</span><br>
+        <span class="sub-label">Night </span><span class="temp">5"</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        3 Days Out<br><br>
+
+        <span class="sub-label">Day </span><span class="temp">2"</span><br>
+        <span class="sub-label">Night </span><span class="temp">5"</span><br>
+      </div>
+      <div class="current-conditions-entry">
+        4 Days Out<br><br>
+
+        <span class="sub-label">Day </span><span class="temp">2"</span><br>
+        <span class="sub-label">Night </span><span class="temp">5"</span><br>
+      </div>
+
+    </div>
+    <div class="flex-container">
+      <div class="weather-source">Weather and Snow Forecast provided by:<br>
+      <img src="https://squawalpine.com/sites/all/themes/squaw/images/opensnow.png"><br>
+      <a href="https://squawalpine.westernweathergroup.com/" target="_blank">Detailed Weather Data</a>
+    </div>
+    </div>
+
+  </div>
+</div>
+</script>
+  <div class="content-placeholder" id="content-placeholder"></div>
+</body>

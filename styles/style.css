@@ -1,0 +1,207 @@
+body {
+  font-family: "brandon-grotesque", Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.sub-container {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #a5bfde;
+}
+
+h1 {
+  position: relative;
+  font-size: 2.5rem;
+  color: #00437b;
+  line-height: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+h3 {
+  font-size: 153.84615%;
+  line-height: 120%;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h5 {
+  font-size: 107.6923%;
+  color: #00437b;
+  line-height: 1;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h5 span.updated {
+  font-size: 90%;
+  color: #0072bc;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mountain-selector {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  border: 1px solid #a5bfde;
+  color: #00437b;
+  cursor: pointer;
+}
+
+.mountain-selector.active {
+  color: #ffffff;
+  background: #00437b;
+}
+
+.mountain-area-tabs {
+  color: #0072bc;
+  padding: 12px 0;
+  font-weight: 700;
+  font-style: normal;
+  background: 0;
+  border: 1px solid #a5bfde;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mountain-area-tabs.active {
+  background-color: #eff5fa;
+  color: #00437b;
+  -webkit-box-shadow: 0 0 5px 0 #bedbff;
+  box-shadow: 0 0 5px 0 #bedbff;
+}
+
+.mountain-area-tabs:hover, .mountain-area-tabs:active {
+  background-color: #eff5fa;
+  color: #00437b;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+}
+
+.current-conditions {
+  font-size: 93%;
+  color: #00437b;
+  line-height: 1;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.current-conditions .current-conditions-entry {
+  padding: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  border: 1px solid #a5bfde;
+}
+
+.current-conditions .current-conditions-entry:nth-child(even) {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+
+.current-conditions .current-conditions-entry i.fal {
+  color: #0072bc;
+  line-height: 80px;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 3rem;
+  clear: both;
+  padding: 0 2rem 0.1rem 2rem;
+}
+
+.current-conditions .current-conditions-entry .value {
+  font-size: 3rem;
+  color: #0072bc;
+  line-height: 80px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  margin: 0;
+  clear: both;
+}
+
+.current-conditions .current-conditions-entry .sub-label {
+  color: #0072bc;
+}
+
+.current-conditions .current-conditions-entry .temp {
+  font-size: 2rem;
+  vertical-align: middle;
+  line-height: 2.5rem;
+  display: inline-block;
+}
+
+.weather-source {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0px;
+  color: #0072bc;
+  text-transform: uppercase;
+  vertical-align: middle;
+  padding: 30px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.weather-source img {
+  max-width: 180px;
+  padding: 10px 0;
+}
+
+.weather-source a {
+  display: inline-block;
+  margin: 10px 0;
+  font-family: "brandon-grotesque",Arial,sans-serif;
+  font-size: .8rem;
+  color: #00437b;
+  line-height: 100%;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  padding: 15px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #a5bfde;
+}
+
+.weather-source a:hover {
+  color: #00437b;
+  border-color: #0072bc;
+}
+/*# sourceMappingURL=style.css.map */
